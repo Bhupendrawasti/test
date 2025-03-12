@@ -7,54 +7,268 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
   <style>
     /* Base Styles */
-    * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', system-ui, sans-serif; }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Inter', system-ui, sans-serif;
+    }
+
+    body {
+      background: #f8f9fa;
+    }
 
     /* Navigation */
-    .navbar { background: rgba(148, 187, 233, 1); padding: 1rem 5%; box-shadow: 0 2px 15px rgba(0,0,0,0.1); position: fixed; width: 100%; top: 0; z-index: 1000; display: flex; justify-content: space-between; align-items: center; }
-    .logo { font-weight: 700; font-size: 1.5rem; color: #FF4D80; text-decoration: none; display: flex; align-items: center; gap: 0.5rem; }
-    .logo i { color: #4a90e2; }
-    .nav-list { display: flex; gap: 2.5rem; list-style: none; }
-    .nav-link { text-decoration: none; color: #2d3748; font-weight: 500; transition: all 0.3s ease; padding: 0.5rem 1rem; border-radius: 8px; }
-    .nav-link:hover { background: #f8f9fa; color: #FF4D80; }
+    .navbar {
+      background: rgba(148, 187, 233, 1);
+      padding: 1rem 5%;
+      box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 1000;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-weight: 700;
+      font-size: 1.5rem;
+      color: #FF4D80;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .logo i {
+      color: #4a90e2;
+    }
+
+    .nav-list {
+      display: flex;
+      gap: 2.5rem;
+      list-style: none;
+    }
+
+    .nav-link {
+      text-decoration: none;
+      color: #2d3748;
+      font-weight: 500;
+      transition: all 0.3s ease;
+      padding: 0.5rem 1rem;
+      border-radius: 8px;
+    }
+
+    .nav-link:hover {
+      background: #f8f9fa;
+      color: #FF4D80;
+    }
 
     /* Hero Section */
-    .hero { background: radial-gradient(circle, rgba(238, 174, 202, 1) 0%, rgba(148, 187, 233, 1) 100%); padding: 160px 20px 120px; text-align: center; clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%); margin-bottom: 4rem; }
-    .hero h1 { background: linear-gradient(45deg, #fff, #f3f4f6); -webkit-background-clip: text; background-clip: text; color: transparent; font-size: 3.2em; margin-bottom: 40px; line-height: 1.2; max-width: 800px; margin: 0 auto 40px; text-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+    .hero {
+      background: radial-gradient(circle, rgba(238, 174, 202, 1) 0%, rgba(148, 187, 233, 1) 100%);
+      padding: 160px 20px 120px;
+      text-align: center;
+      clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+      margin-bottom: 4rem;
+    }
+
+    .hero h1 {
+      background: linear-gradient(45deg, #fff, #f3f4f6);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      font-size: 3.2em;
+      margin-bottom: 40px;
+      line-height: 1.2;
+      max-width: 800px;
+      margin: 0 auto 40px;
+      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
 
     /* Steps Section */
-    .steps-container { padding: 4rem 5%; background: #f8f9fa; }
-    .step-card { background: white; padding: 2.5rem; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); margin-bottom: 2.5rem; position: relative; max-width: 700px; margin: 2rem auto; transition: transform 0.3s ease; }
-    .step-card:hover { transform: translateY(-5px); }
-    .step-icon { width: 60px; height: 60px; background: linear-gradient(135deg, #FF4D80 0%, #FF9500 100%); border-radius: 15px; display: flex; align-items: center; justify-content: center; color: white; font-size: 1.5rem; margin-bottom: 1.5rem; }
-    .step-card h3 { color: #1a202c; margin-bottom: 1rem; font-size: 1.5rem; }
-    .step-card p { color: #4a5568; line-height: 1.6; }
+    .steps-container {
+      padding: 4rem 5%;
+      background: #f8f9fa;
+    }
+
+    .step-card {
+      background: white;
+      padding: 2.5rem;
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+      margin-bottom: 2.5rem;
+      position: relative;
+      max-width: 700px;
+      margin: 2rem auto;
+      transition: transform 0.3s ease;
+    }
+
+    .step-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .step-icon {
+      width: 60px;
+      height: 60px;
+      background: linear-gradient(135deg, #FF4D80 0%, #FF9500 100%);
+      border-radius: 15px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .step-card h3 {
+      color: #1a202c;
+      margin-bottom: 1rem;
+      font-size: 1.5rem;
+    }
+
+    .step-card p {
+      color: #4a5568;
+      line-height: 1.6;
+    }
 
     /* Upload Button */
-    .upload-btn { background: linear-gradient(135deg, #FF4D80 0%, #FF9500 100%); color: white; padding: 1.2rem 3rem; border: none; border-radius: 15px; font-size: 1.1em; cursor: pointer; transition: all 0.3s ease; display: inline-flex; align-items: center; gap: 1rem; box-shadow: 0 10px 30px rgba(255,77,128,0.3); font-weight: 600; }
-    .upload-btn:hover { transform: scale(1.05); box-shadow: 0 15px 40px rgba(255,77,128,0.4); }
+    .upload-btn {
+      background: linear-gradient(135deg, #FF4D80 0%, #FF9500 100%);
+      color: white;
+      padding: 1.2rem 3rem;
+      border: none;
+      border-radius: 15px;
+      font-size: 1.1em;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 1rem;
+      box-shadow: 0 10px 30px rgba(255, 77, 128, 0.3);
+      font-weight: 600;
+    }
+
+    .upload-btn:hover {
+      transform: scale(1.05);
+      box-shadow: 0 15px 40px rgba(255, 77, 128, 0.4);
+    }
 
     /* Download Button */
-    .download-btn-container { display: flex; justify-content: center; margin: 3rem 0; }
-    .download-btn { background: linear-gradient(135deg, #4a90e2 0%, #9013fe 100%); color: white; padding: 1.2rem 3rem; border: none; border-radius: 50px; font-size: 1.1em; cursor: pointer; transition: all 0.3s ease; display: inline-flex; align-items: center; gap: 1rem; box-shadow: 0 10px 30px rgba(74,144,226,0.3); font-weight: 600; position: relative; overflow: hidden; display: none; }
-    .download-btn::before { content: ''; position: absolute; top: 50%; left: 50%; width: 300%; height: 300%; background: radial-gradient(circle, rgba(255,255,255,0.3), rgba(255,255,255,0)); transform: translate(-50%, -50%) scale(0); transition: transform 0.5s ease; border-radius: 50%; }
-    .download-btn:hover::before { transform: translate(-50%, -50%) scale(1); }
-    .download-btn:hover { transform: translateY(-3px); box-shadow: 0 15px 40px rgba(74,144,226,0.4); }
-    .download-btn i { font-size: 1.2rem; }
+    .download-btn-container {
+      display: flex;
+      justify-content: center;
+      margin: 3rem 0;
+    }
+
+    .download-btn {
+      background: linear-gradient(135deg, #4a90e2 0%, #9013fe 100%);
+      color: white;
+      padding: 1.2rem 3rem;
+      border: none;
+      border-radius: 50px;
+      font-size: 1.1em;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 1rem;
+      box-shadow: 0 10px 30px rgba(74, 144, 226, 0.3);
+      font-weight: 600;
+      position: relative;
+      overflow: hidden;
+      display: none;
+    }
+
+    .download-btn::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 300%;
+      height: 300%;
+      background: radial-gradient(circle, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0));
+      transform: translate(-50%, -50%) scale(0);
+      transition: transform 0.5s ease;
+      border-radius: 50%;
+    }
+
+    .download-btn:hover::before {
+      transform: translate(-50%, -50%) scale(1);
+    }
+
+    .download-btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 15px 40px rgba(74, 144, 226, 0.4);
+    }
+
+    .download-btn i {
+      font-size: 1.2rem;
+    }
 
     /* Loading Spinner */
-    .spinner { display: none; width: 40px; height: 40px; border: 4px solid #f3f3f3; border-top: 4px solid #FF4D80; border-radius: 50%; animation: spin 1s linear infinite; margin: 2rem auto; }
-    @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+    .spinner {
+      display: none;
+      width: 40px;
+      height: 40px;
+      border: 4px solid #f3f3f3;
+      border-top: 4px solid #FF4D80;
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+      margin: 2rem auto;
+    }
+
+    @keyframes spin {
+      0% {
+        transform: rotate(0deg);
+      }
+      100% {
+        transform: rotate(360deg);
+      }
+    }
 
     /* Image Container */
-    .image-container { display: flex; flex-direction: column; align-items: center; margin: 2rem 0; }
-    .image-preview { max-width: 100%; height: auto; display: none; margin-top: 1rem; }
+    .image-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin: 2rem 0;
+    }
+
+    .image-preview {
+      max-width: 100%;
+      height: auto;
+      display: none;
+      margin-top: 1rem;
+      border-radius: 15px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    }
 
     /* Responsive Design */
     @media (max-width: 768px) {
-      .hero h1 { font-size: 2.2em; padding: 0 1rem; }
-      .nav-list { gap: 1rem; }
-      .step-card { padding: 1.5rem; }
-      .download-btn { padding: 1rem 2rem; font-size: 1em; }
+      .hero h1 {
+        font-size: 2.2em;
+        padding: 0 1rem;
+      }
+
+      .nav-list {
+        gap: 1rem;
+      }
+
+      .step-card {
+        padding: 1.5rem;
+      }
+
+      .upload-btn, .download-btn {
+        padding: 1rem 2rem;
+        font-size: 1em;
+      }
+
+      .logo {
+        font-size: 1.2rem;
+      }
     }
   </style>
 </head>
@@ -97,6 +311,9 @@
 
   <div class="image-container">
     <div class="spinner" id="spinner"></div>
+    <div id="loading-message" style="display: none; margin-top: 1rem;">
+      <i class="fas fa-spinner fa-spin"></i> Processing image...
+    </div>
     <img id="preview" class="image-preview" alt="Processed Preview">
   </div>
 
@@ -111,18 +328,21 @@
     const preview = document.getElementById('preview');
     const downloadBtn = document.getElementById('downloadBtn');
     const spinner = document.getElementById('spinner');
+    const loadingMessage = document.getElementById('loading-message');
 
     realInput.addEventListener('change', async (e) => {
       const file = e.target.files[0];
       if (!file) return;
 
       spinner.style.display = 'block';
+      loadingMessage.style.display = 'block';
       preview.style.display = 'none';
 
       try {
         const processedUrl = await processImage(file);
         preview.src = processedUrl;
         spinner.style.display = 'none';
+        loadingMessage.style.display = 'none';
         preview.style.display = 'block';
         downloadBtn.style.display = 'inline-flex';
 
@@ -138,71 +358,30 @@
         console.error('Error:', error);
         alert('Processing failed. Please try another image.');
         spinner.style.display = 'none';
+        loadingMessage.style.display = 'none';
       }
     });
 
     async function processImage(file) {
+      const apiKey = 'smEkx6Ugmt5k2YxGz3RkJXsn'; // Your API key
       const formData = new FormData();
-      formData.append('image', file);
+      formData.append('image_file', file);
 
-      const response = await fetch('/api/remove-background', {
+      const response = await fetch('https://api.remove.bg/v1.0/removebg', {
         method: 'POST',
-        body: formData
+        headers: {
+          'X-Api-Key': apiKey,
+        },
+        body: formData,
       });
 
-      if (!response.ok) throw new Error('API Error');
+      if (!response.ok) {
+        throw new Error('Failed to remove background');
+      }
+
       const blob = await response.blob();
       return URL.createObjectURL(blob);
     }
   </script>
-  <script>const express = require('express');
-const multer = require('multer');
-const FormData = require('form-data');
-const fetch = require('node-fetch');
-const cors = require('cors');
-require('dotenv').config();
-
-const app = express();
-const upload = multer({ storage: multer.memoryStorage() });
-
-app.use(cors());
-app.use(express.json());
-
-app.post('/api/remove-background', upload.single('image'), async (req, res) => {
-  try {
-    if (!req.file) {
-      return res.status(400).json({ error: 'No image file provided' });
-    }
-
-    const formData = new FormData();
-    formData.append('image_file', req.file.buffer, {
-      filename: req.file.originalname,
-      contentType: req.file.mimetype
-    });
-
-    const bgResponse = await fetch('https://api.remove.bg/v1.0/removebg', {
-      method: 'POST',
-      headers: {
-        'X-Api-Key': process.env.REMOVEBG_API_KEY
-      },
-      body: formData
-    });
-
-    if (!bgResponse.ok) {
-      throw new Error('Background removal failed');
-    }
-
-    res.set('Content-Type', 'image/png');
-    bgResponse.body.pipe(res);
-  } catch (error) {
-    console.error('Error:', error);
-    res.status(500).json({ error: 'Internal server error' });
-  }
-});
-
-const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => {
-  console.log(`Server running on http://localhost:${PORT}`);
-});</script>
 </body>
 </html>
