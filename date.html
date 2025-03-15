@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BS-AD Date Converter</title>
+    <link rel="stylesheet" href="css/date.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nepali-datepicker@2.2.0/css/nepali.datepicker.min.css">
+</head>
+<body>
+    <div class="container">
+        <h1>BS to AD and AD to BS Date Converter</h1>
+
+        <!-- BS to AD Conversion -->
+        <div class="convert-box">
+            <h2>BS to AD</h2>
+            <label for="bs-date">Enter BS Date:</label>
+            <input type="text" id="bs-date" name="bs-date">
+            <button onclick="convertBStoAD()">Convert</button>
+            <p id="ad-result"></p>
+        </div>
+
+        <!-- AD to BS Conversion -->
+        <div class="convert-box">
+            <h2>AD to BS</h2>
+            <label for="ad-date">Enter AD Date:</label>
+            <input type="date" id="ad-date" name="ad-date">
+            <button onclick="convertADtoBS()">Convert</button>
+            <p id="bs-result"></p>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/nepali-datepicker@2.2.0/js/nepali.datepicker.min.js"></script>
+    <script src="script/date.js"></script>
+</body>
+</html>
