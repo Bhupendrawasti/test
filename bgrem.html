@@ -326,6 +326,7 @@
   </div>
 
   <script>
+    require('dotenv').config();
     const realInput = document.getElementById('real-input');
     const preview = document.getElementById('preview');
     const downloadBtn = document.getElementById('downloadBtn');
@@ -365,7 +366,7 @@
     });
 
     async function processImage(file) {
-      const apiKey = 'Z1NQnQCPdNfaxgSLLKEbSem4'; // Your API key
+      const apiKey = process.env.REMOVEBG_API_KEY; // Your API key
       const formData = new FormData();
       formData.append('image_file', file);
 
